@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/Header.css";
 import logoMarvel from "../assets/logoMarvel.png";
 import iconMuShield from "../assets/iconMuShield.png";
 import iconLupa from "../assets/iconLupa.png";
@@ -9,7 +10,7 @@ import iconTiktok from "../assets/iconTiktok.png";
 import iconYoutube from "../assets/iconYoutube.png";
 import iconSnapchat from "../assets/iconSnapchat.png";
 import iconPinterest from "../assets/iconPinterest.png";
-import "../styles/header.css";
+
 
 export default function Header() {
   const [menu, setMenu] = useState(false);

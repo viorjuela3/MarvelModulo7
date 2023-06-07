@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/footer.css";
+import "../styles/Footer.css";
 import wordM from "../assets/wordM.jpg";
 import marvelInsider from "../assets/marvelInsider.png";
 import marvelUnlimited from "../assets/marvelUnlimited.png";
@@ -11,7 +11,7 @@ import iconYoutube from "../assets/iconYoutube.png";
 import iconSnapchat from "../assets/iconSnapchat.png";
 import iconPinterest from "../assets/iconPinterest.png";
 
-export default function footer() {
+export default function Footer() {
   return (
     <div className="footer">
       <div className="footerContent">

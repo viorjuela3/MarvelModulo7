@@ -1,16 +1,16 @@
 import './App.css';
 import Header from './components/Header';
 import Login from './components/Login';
-import Comics from './components/Comics';
 import Footer from './components/Footer';
+import { ComicList } from './components/ComicList';
 
 function App() {
   return (
     <div className="App">
 
       <Header/>
-       <Login/>
-      <Comics/>
+      <Login/>
+      <ComicList/>
       <Footer/>
 
     </div>
