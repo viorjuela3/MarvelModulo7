@@ -1,7 +1,8 @@
 import React from 'react'
+import "../styles/login.css";
 
 export default function login() {
   return (
-    <div>login</div>
+    <div className='container-principal'>login</div>
   )
 }

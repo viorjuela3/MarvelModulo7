@@ -138,19 +138,6 @@
   }
 }
 
-.titleSocialNetworks {
-  display: none;
-  color: var(--blanco-tipografia);
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
-@media (min-width: 768px) {
-  .titleSocialNetworks {
-    display: flex;
-  }
-}
-
 .iconSocialNetworks{
   display: inline;
   gap: 2rem;

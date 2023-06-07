@@ -66,7 +66,6 @@ export default function Header() {
             </div>
 
             <div className="socialNetworks">
-              <p className="titleSocialNetworks">FOLLOW MARVEL</p>
               <div className="iconSocialNetworks">
                 <a href="/">
                   <img src={iconFacebook} className="icon" alt="iconFacebook" />
