@@ -1,0 +1,17 @@
+.containerComicList{
+    display: flex;
+}
+.detailComicList img{
+    width: 100px;
+    height: 100px;
+}
+
+.detailComicList h3{
+    width: 100px;
+    height: 100px;
+}
+
+.detailComicList p{
+    width: 100px;
+    height: 100px;
+}
