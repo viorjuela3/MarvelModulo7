@@ -109,7 +109,7 @@ export const ComicList = () => {
      {comics.map((comic) => (
         <div className="containerComics" key={comic.id}>
           <Link to={`/comics/${comic.id}`}>
-            <img src={comic.imageUrl} alt={comic.title} />
+            <img className="imgComics" src={comic.imageUrl} alt={comic.title} />
             <h2>{comic.title}</h2>
           </Link>
         </div>
