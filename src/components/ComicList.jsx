@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ComicDetail from "./ComicDetail";
+import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/ComicList.css";
 import comicAlien from "../assets/comicAlien.jpg";
 import comicAvengers from "../assets/comicAvengers.jpg";
@@ -15,23 +15,7 @@ import comicTheAmazingSpiderMan from "../assets/comicTheAmazingSpiderMan.jpg";
 import comicVenom from "../assets/comicVenom.jpg";
 
 export const ComicList = () => {
-  const [comics, setComics] = useState([]);
-
-  useEffect(() => {
-    fetchComics();
-  }, []);
-
-  const fetchComics = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/"); // Ruta de la API para obtener la lista de cómics
-      const data = await response.json();
-      setComics(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const additionalComic = [
+  const comics = [
     {
       id: 1,
       title: "Alien",
@@ -121,13 +105,16 @@ export const ComicList = () => {
 
   return (
     <div className="comic-list">
-      {comics.map((comic) => (
-        <ComicDetail key={comic.id} comic={comic} />
-      ))}
 
-      {additionalComic.map((comic) => (
-        <ComicDetail key={comic.id} comic={comic} />
+     {comics.map((comic) => (
+        <div className="containerComics" key={comic.id}>
+          <Link to={`/comics/${comic.id}`}>
+            <img src={comic.imageUrl} alt={comic.title} />
+            <h2>{comic.title}</h2>
+          </Link>
+        </div>
       ))}
+      
     </div>
   );
 };

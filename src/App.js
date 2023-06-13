@@ -1,22 +1,35 @@
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Login from './components/Login';
+import Home from './components/Home';
 import ComicDetail from './components/ComicDetail';
-import FavoriteComics from './components/FavoriteComics';
 import ComicList from './components/ComicList';
+import FavoriteComics from './components/FavoriteComics';
 import Footer from './components/Footer';
+
 function App() {
+  const [favorites, setFavorites] = useState([]);
+
+  const addToFavorites = (comic) => {
+    setFavorites([...favorites, comic]);
+  };
+
   return (
-    <div className="App">
-
-      <Header/>
-      <Login/>
-      <ComicDetail/>
-      <FavoriteComics/>
-      <ComicList/>
-      <Footer/>
-
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/comics" element={<ComicList />} />
+          <Route path="/comics/:id" element={<ComicDetail />} />
+          <Route
+            path="/favorites"
+            element={<FavoriteComics favorites={favorites} setFavorites={setFavorites} addToFavorites={addToFavorites} />}
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
