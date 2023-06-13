@@ -1,5 +1,5 @@
 # Bienvenidos/as
-El proyecto consiste en el desarrollo de un sitio web que permite ver los Comics de Marvel y  crear una lista de favoritos
+El proyecto consiste en el desarrollo de un sitio web que permite ver los Comics de Marvel y  crear una lista de favoritos personalizada.
 
 ## Documentación
 Puedes visualizar la documentación del proyecto en el siguiente link 👇
@@ -9,4 +9,5 @@ Puedes visualizar la documentación del proyecto en el siguiente link 👇
 Puedes visaulizar el despliegue de la aplicación en el siguiente link 👇
 
 
-# Marv
+# Marvel
+![imagen]()
