@@ -10,4 +10,4 @@ Puedes visaulizar el despliegue de la aplicación en el siguiente link 👇
 
 
 # Marvel
-![imagen]()
+![imagen](https://raw.githubusercontent.com/viorjuela3/pruebaTecnofactory/main/src/assets/Marvel_Pag.png)
