@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
+import { Login } from './components/Login';
 import ComicDetail from './components/ComicDetail';
 import ComicList from './components/ComicList';
 import FavoriteComics from './components/FavoriteComics';
@@ -18,7 +19,10 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Routes>
+          <Routes>
+            <Route exact path="/" element={<Login className="componenteLogin"/>}/>
+          </Routes>
+     <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/comics" element={<ComicList />} />
           <Route path="/comics/:id" element={<ComicDetail />} />
@@ -28,6 +32,7 @@ function App() {
           />
         </Routes>
         <Footer />
+       
       </div>
     </Router>
   );
