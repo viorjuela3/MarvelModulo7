@@ -2,14 +2,17 @@ import React from "react";
 import "../styles/FavoriteComics.css";
 
 export const FavoriteComics = ({ favorites, setFavorites }) => {
-  const handleRemoveFavorite = (comic) => {
-    setFavorites((prevFavorites) =>
-      prevFavorites.filter((c) => c.id !== comic.id)
-    );
+  // const handleRemoveFavorite = (comic) => {
+  //   setFavorites((prevFavorites) =>
+  //     prevFavorites.filter((c) => c.id !== comic.id)
+  //   );
+  // };
+  const handleRemoveAllFavorites = () => {
+    setFavorites([]);
   };
   return (
     <div className="favorite-comics">
-      <h2>Favorite Comics</h2>
+      <h2>Comics Favoritos</h2>
       {favorites.length === 0 ? (
         <p>No hay cómics favoritos</p>
       ) : (
@@ -21,9 +24,12 @@ export const FavoriteComics = ({ favorites, setFavorites }) => {
         ))
       )}
 
-      <button onClick={() => handleRemoveFavorite(favorites)}>
+      {/* <button onClick={() => handleRemoveFavorite(favorites)}>
         Quitar de favoritos
-      </button>
+      </button> */}
+      <button onClick={handleRemoveAllFavorites}>
+  Quitar todos los favoritos
+</button>
     </div>
   );
 };
