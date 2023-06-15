@@ -5,9 +5,5 @@ El proyecto consiste en el desarrollo de un sitio web que permite ver los Comics
 Puedes visualizar la documentación del proyecto en el siguiente link 👇
 - https://www.notion.so/Proyecto-Marvel-Tecnofactory-15de48bd2b334230bdca3a6531bb03de
 
-## Despliegue
-Puedes visaulizar el despliegue de la aplicación en el siguiente link 👇
-
-
 # Marvel
 ![imagen](https://raw.githubusercontent.com/viorjuela3/pruebaTecnofactory/main/src/assets/Marvel_Pag.png)
