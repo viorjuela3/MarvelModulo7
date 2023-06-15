@@ -34,8 +34,6 @@ function App() {
           <Route
             path="/favorites"
             element={<FavoriteComics favorites={favorites} setFavorites={setFavorites} addToFavorites={addToFavorites} />}
-
-        
           />
         </Routes>
         <Footer />

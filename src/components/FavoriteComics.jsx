@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/FavoriteComics.css";
 
-export const FavoriteComics = ({ favorites, setFavorites, addToFavorites }) => {
+export const FavoriteComics = ({ favorites, setFavorites }) => {
   const handleRemoveFavorite = (comic) => {
     setFavorites((prevFavorites) =>
       prevFavorites.filter((c) => c.id !== comic.id)
@@ -17,14 +17,13 @@ export const FavoriteComics = ({ favorites, setFavorites, addToFavorites }) => {
           <div key={favComic.id} className="favorite-comic">
             <h3>{favComic.title}</h3>
             <img src={favComic.imageUrl} alt={favComic.title} />
-            <button onClick={() => handleRemoveFavorite(favComic)}>
-              Quitar de favoritos
-            </button>
           </div>
         ))
       )}
 
-      <button onClick={() => addToFavorites()}>Quitar de los favoritos</button>
+      <button onClick={() => handleRemoveFavorite(favorites)}>
+        Quitar de favoritos
+      </button>
     </div>
   );
 };

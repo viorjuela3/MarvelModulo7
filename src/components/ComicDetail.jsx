@@ -1,9 +1,8 @@
-import FavoriteComics from "./FavoriteComics";
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import "../styles/ComicDetail.css";
-
+import FavoriteComics from "./FavoriteComics";
 import comicAlien from "../assets/comicAlien.jpg";
 import comicAvengers from "../assets/comicAvengers.jpg";
 import comicCaptainAmerica from "../assets/comicCaptainAmerica.jpg";
