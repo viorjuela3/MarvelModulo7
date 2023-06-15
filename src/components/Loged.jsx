@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import "../styles/Loged.css"
 
-
 export const Loged = (props) => {
 
-
-  //FUNCION CON PROPS (PROPIEDADES) PARA REINICIAR EL FORMULARIO DE Login DESPUES DE EJECUTAR EL BOTON "Salir"
   const handleLogout = () => {
     props.handleLogout();
   };
 
-
-
   return (
     <div className='container-loged'>
-
         <div className="bienvenido">
           <p>Bienvenido {props.nombre}!</p>
           {/* VISUALIZACION DEL AVATAR SELECCIONADO EN EL BOTON DE LOGIN DEL COMPONENTE Login */}
@@ -23,12 +17,14 @@ export const Loged = (props) => {
             alt="Avatar"
           />
         </div>
-
+        
           {/* BOTON SALIR */}
         <button onClick={handleLogout}>
           Salir
-        </button>
-
-    </div>
+        </button>   
+    </div> 
   )
+
 }
+
+export default Loged;

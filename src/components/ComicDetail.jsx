@@ -1,6 +1,9 @@
+import FavoriteComics from "./FavoriteComics";
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 import "../styles/ComicDetail.css";
+
 import comicAlien from "../assets/comicAlien.jpg";
 import comicAvengers from "../assets/comicAvengers.jpg";
 import comicCaptainAmerica from "../assets/comicCaptainAmerica.jpg";
@@ -14,10 +17,11 @@ import comicSpinstress from "../assets/comicSpinstress.jpg";
 import comicTheAmazingSpiderMan from "../assets/comicTheAmazingSpiderMan.jpg";
 import comicVenom from "../assets/comicVenom.jpg";
 
-
 export const ComicDetail = ({ addToFavorites }) => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const [favorites, setFavorites] = useState([]);
 
   const comics = [
     
@@ -111,7 +115,7 @@ export const ComicDetail = ({ addToFavorites }) => {
   const comic = comics.find((c) => c.id === parseInt(id));
 
   if (!comic) {
-    return <div>Comic not found</div>;
+    return <div>Comic no fue encontrado en la memoria del array comics</div>;
   }
 
   const { title, imageUrl, description } = comic;
@@ -121,6 +125,7 @@ export const ComicDetail = ({ addToFavorites }) => {
     navigate("/favorites"); 
   };
 
+  //Visualiza la imagen, el titulo y la descripción
 
   return (
     <div className="containerComicDetail"> 
@@ -130,6 +135,8 @@ export const ComicDetail = ({ addToFavorites }) => {
       <p>{description}</p>
       <button onClick={handleAddToFavorites}>Agregar a favoritos</button>
       </div>
+      
+      <FavoriteComics favorites={favorites} setFavorites={setFavorites} addToFavorites={addToFavorites} />
 
     </div>
   );

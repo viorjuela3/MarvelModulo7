@@ -12,24 +12,20 @@ export const Login = () => {
   const [errorAvatar, setErrorAvatar] = useState(false);
   const [error, setError] = useState(false);
 
-  // RESETEO SINCRONICO DEL INPUT DEL CORREO CUANDO EL ESTADO DE LA VARIABLE "error" PASA A "true", ES DECIR CUANDO SE INGRESA UN FORMATO DE CORREO INVALIDO SEGUN EL REGEX: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   useEffect(() => {
     if (error) {
       document.getElementById("txtcorreo").value = "";
       document.getElementById("txtcorreo").focus();
     }
   }, [error]);
-  //FUNCIONALIDAD PARA EL BOTON DE INICIO DE SESION
+  
   function inicioSesion(e) {
-    //PREVENIR QUE SE REFRESQUE LA PAGINA AL DAR CICK EN EL BOTON INICIO DE SESION
     e.preventDefault();
 
-    //TOMA DE VALORES DE INPUTS DEL FORMULARIO
     let txtnom = document.getElementById("txtnom").value;
     let txtident = document.getElementById("txtident").value;
     let txtcorreo = document.getElementById("txtcorreo").value;
 
-    //VARIABLES DE VALIDACION DE DATOS INGRSADOS AL INPUT
     let nombreValido = txtnom.length > 0;
     let identificacionValida = txtident.length > 0;
     let correoValido = [
@@ -38,40 +34,32 @@ export const Login = () => {
     ];
     let avatarValido = avatar !== "";
 
-    //COMPROBACION BOOLEANO DE ERRORES PARA EL INGRESO DE DATOS COMPLETOS AL FORMULARIO
     if (!nombreValido || !identificacionValida || !correoValido[1]) {
       setMiLogin("false");
       setVacio(true);
       return;
-      //COMPROBACION BOOLEANO DE ERRORES DEL FORMATO DE CORREO SEGUN EL REGEX: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    
     } else {
       if (!correoValido[0]) {
         setMiLogin("false");
         setError(true);
         return;
-
-        //COMPROBACION BOOLEADO DE ERROR EN LA SELECCION DE AVATAR OBLIGATORIO
       } else {
         if (!avatarValido) {
           setMiLogin("false");
           setErrorAvatar(true);
           return;
-
-          //PERMITIR ACCESO A LA PLATAFORMA, SE CAMBIA EL ESTADO DE setMiLogin a "true" Y SE OCULTA EL FORMULARIO DE REGISTRO
         } else {
           setMiLogin("true");
           document.getElementById("login-container").style.display = "none";
         }
       }
     }
-
-    //RESETEO DE ESTADOS DE ERRORES A FALSE
     setVacio(false);
     setError(false);
     setErrorAvatar(false);
   }
 
-  //RESETEO DEL FORMULARIO DE REGISTRO DESPUES DE QUE CIERRE LA SESION CON EL BOTON "Salir" DEL COMPONENTE "Loged"
   function handleLogout() {
     setMiLogin("false");
     setNombre("");
@@ -187,3 +175,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;

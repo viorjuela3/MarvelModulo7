@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import { Login } from './components/Login';
@@ -14,21 +14,28 @@ function App() {
   const addToFavorites = (comic) => {
     setFavorites([...favorites, comic]);
   };
+  
 
   return (
     <Router>
       <div className="App">
         <Header />
+
+
+        
           <Routes>
-            <Route exact path="/" element={<Login className="componenteLogin"/>}/>
+          <Route exact path="/" element={<Login/>}/>
           </Routes>
-     <Routes>
+
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/comics" element={<ComicList />} />
           <Route path="/comics/:id" element={<ComicDetail />} />
           <Route
             path="/favorites"
             element={<FavoriteComics favorites={favorites} setFavorites={setFavorites} addToFavorites={addToFavorites} />}
+
+        
           />
         </Routes>
         <Footer />

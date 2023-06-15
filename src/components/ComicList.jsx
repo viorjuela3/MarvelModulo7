@@ -103,9 +103,9 @@ export const ComicList = () => {
     },
   ];
 
+  //Visualiza la imagen y el titulo del comic
   return (
     <div className="comic-list">
-
      {comics.map((comic) => (
         <div className="containerComics" key={comic.id}>
           <Link to={`/comics/${comic.id}`}>
